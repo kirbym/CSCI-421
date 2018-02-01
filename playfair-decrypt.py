@@ -1,4 +1,4 @@
-# Implementation of the Playfair encryption scheme
+# Implementation of the Playfair decryption scheme
 # Author: Michael Kirby
 
 import sys
@@ -26,5 +26,5 @@ if __name__ == "__main__":
         print "Error. Incorrect arguments given."
         sys.exit(1)
 
-    ciphertext = playfair.encrypt(key, input_text)
-    print ciphertext
+    plaintext = playfair.decrypt(key, input_text)
+    print plaintext
