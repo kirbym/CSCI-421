@@ -27,4 +27,4 @@ if __name__ == "__main__":
         sys.exit(1)
 
     ciphertext = playfair.encrypt(key, input_text)  #result of encryption method
-    print ciphertext
+    sys.stdout.write(ciphertext)

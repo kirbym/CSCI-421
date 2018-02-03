@@ -27,4 +27,4 @@ if __name__ == "__main__":
         sys.exit(1)
 
     plaintext = playfair.decrypt(key, input_text)  #result of decryption method
-    print plaintext
+    sys.stdout.write(plaintext)
