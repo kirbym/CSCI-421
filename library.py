@@ -13,12 +13,6 @@ def removeDuplicates(text):   #remove duplicate characters in a string
     return "".join(unique)     #string of unique characters
 
 
-def removeInvalidChars(text):    #remove specific characters chosen with translate method
-    invalid_chars = ' \n,./<>?;:\'"[]{}\|-=_+!@#$%^&*()1234567890'
-    return text.translate(None, invalid_chars)  #first arg is a translation table for switching characters, "None" in this case
-                                                  #second arg is a string type of chars translate will eliminate
-
-
 def chunkText(text):   #chunk string of text into blocks of 2 with a space in between each chunk
     chunked = ""
     for c in range(0, len(text), 2):
@@ -36,3 +30,7 @@ def findLetter(dictionary, row, column):     #find a key in a dictionary where t
     for k, v in dictionary.iteritems():    #iterate over key-value pairs to find key with specific value we searched for
         if v == (row, column):              #'k' stands for key of dictionary, 'v' is a value associated with a key in a dictionary
             return k
+
+def onlyAlphabetChars(text):
+    text = filter(lambda c: c.isalpha(), text)
+    return text

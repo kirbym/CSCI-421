@@ -3,7 +3,7 @@ import library
 
 
 def formatKey(key):  #format key to remove bad chars, replacing "j" with "i", removing duplicates, and changing to lowercase
-    key = library.removeInvalidChars(key)
+    key = library.onlyAlphabetChars(key)
     key = library.replaceCharacters(key, "j", "i")
     key = library.removeDuplicates(key)
     key = key.lower()
@@ -12,7 +12,7 @@ def formatKey(key):  #format key to remove bad chars, replacing "j" with "i", re
 
 
 def formatInput(text):   #format input to remove bad chars, replacing "j" with "i", and changing to lowercase
-    text = library.removeInvalidChars(text)
+    text = library.onlyAlphabetChars(text)
     text = library.replaceCharacters(text, "j", "i")
 
     if len(text) % 2 == 1:        #add an "x" if the string has odd number of chars
