@@ -1,5 +1,18 @@
-# library file for encryption and decryption project
+#library file of shared functions
+import sys
 import string
+
+
+def caesar(text, key):
+    for i in text:
+        if i.isalpha():
+            i = i.lower()
+            shifted = chr( ord(i) + key)
+            if shifted.isalpha() == 0:
+                shifted = chr( ord(shifted) - 26)
+            sys.stdout.write(shifted)
+        else:
+            sys.stdout.write(i)
 
 
 def removeDuplicates(text):   #remove duplicate characters in a string
@@ -30,6 +43,7 @@ def findLetter(dictionary, row, column):     #find a key in a dictionary where t
     for k, v in dictionary.iteritems():    #iterate over key-value pairs to find key with specific value we searched for
         if v == (row, column):              #'k' stands for key of dictionary, 'v' is a value associated with a key in a dictionary
             return k
+
 
 def onlyAlphabetChars(text):
     text = filter(lambda c: c.isalpha(), text)
